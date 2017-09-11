@@ -1,7 +1,7 @@
-* TECNOLOGÍAS
- - Spring Cloud
- - Spring Core
- - Spring MVC
- - Spring Cloud
+# TECNOLOGÍAS
+ * Spring Cloud
+ * Spring Core
+ * Spring MVC
+ * Spring Cloud
    - Eureka
  
