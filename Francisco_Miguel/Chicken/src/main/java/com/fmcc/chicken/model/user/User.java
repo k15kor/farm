@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.fmcc.chicken.model.user;
 
 import java.util.List;
 
@@ -7,21 +7,23 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
 import lombok.Data;
+
+import com.fmcc.chicken.model.chicken.Chicken;
 
 @Data
 @Entity
-public class Chickens {
-
+public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id_chicken;
-// test123
-	private String type;
+	private Integer id;
 	
-	private String frecuency;
-
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "idProduction")
-	private List<Production> production;
+	private String username;
+	
+	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+	private List<Chicken> chickens;
+	
 }
