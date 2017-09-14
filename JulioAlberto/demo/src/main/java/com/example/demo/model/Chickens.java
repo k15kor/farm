@@ -17,7 +17,7 @@ public class Chickens {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id_chicken;
-// test
+// test123
 	private String type;
 	
 	private String frecuency;
