@@ -1,9 +1,9 @@
 spring:
   profiles: local
   datasource:
-    url: jdbc:mysql://localhost:3306/farm
+    url: jdbc:mysql://localhost:3306/demo
     username: root
-    password: root
+    password: david01
   jpa:
     show-sql: true
     format-sql: true
