@@ -1,4 +1,4 @@
-package com.example.demo.model.user;
+package com.k.farm.model.user;
 
 import java.util.Date;
 import java.util.List;

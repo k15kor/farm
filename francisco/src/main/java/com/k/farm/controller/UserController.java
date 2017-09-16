@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package com.k.farm.controller;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.model.user.User;
-import com.example.demo.service.UserService;
+import com.k.farm.model.user.User;
+import com.k.farm.service.UserService;
 
 import lombok.extern.slf4j.Slf4j;
 

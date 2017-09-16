@@ -1,4 +1,4 @@
-package com.example.demo.service;
+package com.k.farm.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.dao.UserDao;
-import com.example.demo.model.user.User;
+import com.k.farm.dao.UserDao;
+import com.k.farm.model.user.User;
 
 @Service
 public class UserServiceImpl implements UserService {
