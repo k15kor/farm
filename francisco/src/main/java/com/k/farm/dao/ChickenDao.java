@@ -5,14 +5,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.stereotype.Repository;
 
-import com.k.farm.model.user.User;
+import com.k.farm.model.Chicken;
 
 import lombok.Data;
 
 @Data  
-@Entity
-public interface ChickensDao extends PagingAndSortingRepository<User, Integer> {
+@Repository
+public interface ChickenDao extends PagingAndSortingRepository<Chicken, Integer> {
 
 	
 	

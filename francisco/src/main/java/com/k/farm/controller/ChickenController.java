@@ -9,52 +9,53 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.k.farm.model.User;
-import com.k.farm.service.UserService;
+import com.k.farm.model.Chicken;
+import com.k.farm.service.ChickenService;
 
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RestController
-@RequestMapping(value = "/user")
-public class UserController implements CRUD<User, Integer> {
+@RequestMapping(value = "/chicken")
+public class ChickenController implements CRUD<Chicken, Integer> {
 
 	@Autowired
-	private UserService userService;
+	private ChickenService chickenService;
 
 	@Override
 	@RequestMapping(method = RequestMethod.POST)
-	public User create(@RequestBody User t) {
-		//log.info("Intentando crear un usuario");
-		return userService.create(t);
+	public Chicken create(@RequestBody Chicken t) {
+		//log.info("Intentando crear un pollo");
+		return chickenService.create(t);
 	}
 
 	@Override
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-	public void delete(@RequestBody User t) {
-		//log.info("Vamos a borrar");
-		userService.delete(t);
+	public void delete(@RequestBody Chicken t) {
+		//log.info("Vamos a borrar pollos");
+		chickenService.delete(t);
 	}
 
 	@Override
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-	public void update(@RequestBody User t) {
+	public void update(@RequestBody Chicken t) {
 		//log.info("Vamos a actualizar");
-		userService.update(t);
+		chickenService.update(t);
 	}
 
 	@Override
 	@RequestMapping(method = RequestMethod.GET)
-	public List<User> getAll() {
-		//log.info("Vamos a recuperar todos");
-		return userService.getAll();
+	public List<Chicken> getAll() {
+		//log.info("Vamos a recuperar todos los pollos");
+		return chickenService.getAll();
 	}
 
 	@Override
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public User findById(@PathVariable("id") Integer id) {
-		//log.info("Vamos a recuperar un usuario con id " + id);
-		return userService.findById(id);
+	public Chicken findById(@PathVariable("id") Integer id) {
+		//log.info("Vamos a recuperar un pollo con id " + id);
+		return chickenService.findById(id);
 	}
 
 }
