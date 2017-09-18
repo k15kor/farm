@@ -38,17 +38,19 @@ public class ChickenServiceImpl implements ChickenService {
 		dao.findAll().forEach(u -> chickens.add(u));
 		return chickens;
 	}
+	
+	@Override
+	public Page<Chicken> listAllByPage(Pageable pageable) {
+		// TODO Auto-generated method stub
+		return dao.findAll(pageable);
+	}
 
 	@Override
 	public Chicken findById(Integer id) {
 		return dao.findOne(id);
 	}
 
-	@Override
-	public Page<Chicken> listAllByPage(Pageable pageable) {
-		// TODO Auto-generated method stub
-		return dao.findAll(pageable);
-	}
+	
 
 	
 	
