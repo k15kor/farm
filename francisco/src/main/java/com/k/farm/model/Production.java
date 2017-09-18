@@ -17,7 +17,7 @@ import javax.persistence.TemporalType;
 
 import lombok.Data;
 
-@Data
+//@Data
 @Entity
 public class Production implements Serializable {
 
@@ -33,6 +33,46 @@ public class Production implements Serializable {
 	
 	@ManyToOne
 	private Chicken chicken;
+
+	public Integer getId_production() {
+		return id_production;
+	}
+
+	public void setId_production(Integer id_production) {
+		this.id_production = id_production;
+	}
+
+	public Date getProduction_date() {
+		return production_date;
+	}
+
+	public void setProduction_date(Date production_date) {
+		this.production_date = production_date;
+	}
+
+	public Integer getState() {
+		return state;
+	}
+
+	public void setState(Integer state) {
+		this.state = state;
+	}
+
+	public Integer getPrice() {
+		return price;
+	}
+
+	public void setPrice(Integer price) {
+		this.price = price;
+	}
+
+	public Chicken getChicken() {
+		return chicken;
+	}
+
+	public void setChicken(Chicken chicken) {
+		this.chicken = chicken;
+	}
 	
 
 }

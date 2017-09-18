@@ -16,7 +16,7 @@ import javax.persistence.TemporalType;
 
 import lombok.Data;
 
-@Data
+//@Data
 @Entity
 public class User implements Serializable {
 
@@ -28,5 +28,29 @@ public class User implements Serializable {
 
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "user")
 	private List<Chicken> chicken;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public List<Chicken> getChicken() {
+		return chicken;
+	}
+
+	public void setChicken(List<Chicken> chicken) {
+		this.chicken = chicken;
+	}
 
 }
