@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.k.farm.dao.UserDao;
@@ -40,6 +42,12 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User findById(Integer id) {
 		return dao.findOne(id);
+	}
+
+	@Override
+	public Page<User> listAllByPage(Pageable pageable) {
+		// TODO Auto-generated method stub
+		return dao.findAll(pageable);
 	}
 
 }

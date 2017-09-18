@@ -3,12 +3,15 @@ package com.k.farm.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.k.farm.model.Chicken;
 import com.k.farm.model.User;
 import com.k.farm.service.UserService;
 
@@ -55,6 +58,12 @@ public class UserController implements CRUD<User, Integer> {
 	public User findById(@PathVariable("id") Integer id) {
 		//log.info("Vamos a recuperar un usuario con id " + id);
 		return userService.findById(id);
+	}
+
+	@Override
+	public Page<User> listAllByPage(Pageable pageable) {
+			Page<User> users = userService.listAllByPage(pageable);
+			return users;
 	}
 
 }

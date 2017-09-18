@@ -3,6 +3,8 @@ package com.k.farm.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -56,6 +58,13 @@ public class ChickenController implements CRUD<Chicken, Integer> {
 	public Chicken findById(@PathVariable("id") Integer id) {
 		//log.info("Vamos a recuperar un pollo con id " + id);
 		return chickenService.findById(id);
+	}
+	
+	@Override
+	@RequestMapping(value="/chickens",method=RequestMethod.GET)
+	public Page<Chicken> listAllByPage( Pageable pageable){
+		Page<Chicken> chickens = chickenService.listAllByPage(pageable);
+		return chickens;
 	}
 
 }
